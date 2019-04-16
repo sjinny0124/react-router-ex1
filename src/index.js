@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./App.css";
 const User = ({ name }) => <div className="User">{name}</div>;
 
-const hoc = BaseComponent => props => {
+const withJim = BaseComponent => props => {
   console.log("===>", props, BaseComponent);
   return <BaseComponent {...props} name="Jim" />;
 };
@@ -22,9 +22,9 @@ const hoc3 = BaseComponent =>
     }
   };
 
-const User3 = hoc2({ name: "Bob" })(User);
+const User3 = hoc2({ name: "Bob" })(User); //커링 형태
 const User4 = hoc3(User);
-const User2 = hoc(User);
+const User2 = withJim(User);
 
 class App extends React.Component {
   state = {
