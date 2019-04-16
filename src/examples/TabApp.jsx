@@ -1,17 +1,15 @@
 import React, { Component } from "react";
-import { Link, Route, Switch } from "react-router-dom";
-
-const Profile = () => <div>You're on the Contact Tab</div>;
-const Comments = () => <div>You're on the Contact Tab</div>;
+import { Switch, Route, Link } from "react-router-dom";
+const Profile = () => <div>You're on the Profile Tab</div>;
+const Comments = () => <div>You're on the Comments Tab</div>;
 const Contact = () => <div>You're on the Contact Tab</div>;
-
 class TabApp extends Component {
   render() {
     const { path } = this.props.match;
     return (
       <div>
         <h1>Hey welcome home!</h1>
-        <div className="tab">
+        <div className="links">
           <Link to={`${path}`} className="link">
             Profile
           </Link>
@@ -22,8 +20,7 @@ class TabApp extends Component {
             Contact
           </Link>
         </div>
-
-        <div className="tab-container">
+        <div className="tabs">
           <Switch>
             <Route path={`${path}`} exact component={Profile} />
             <Route path={`${path}/comments`} component={Comments} />
@@ -34,5 +31,4 @@ class TabApp extends Component {
     );
   }
 }
-
 export default TabApp;
