@@ -36,3 +36,10 @@ a.active {
   background-color: blue;
   font-size: 20px;
 }
+.User {
+  border: 1px solid #ccc;
+  background: green;
+  width: 100px;
+  height: 100px;
+  color: #fff;
+}
